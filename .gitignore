@@ -4,8 +4,6 @@ venv/
 __pycache__/
 *.pyc
 .pytest_cache/
-# Garak raw output is bulky; keep only the summaries we write next to it
-reports/garak/**/*.jsonl
-reports/garak/**/*.html
-!reports/garak/**/summary.md
+# Garak raw output is bulky; keep only the parsed summaries and the small sample
+reports/garak/raw/
 reports/results/*-mock.json
