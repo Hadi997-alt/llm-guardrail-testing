@@ -2,5 +2,6 @@ pytest>=8.0
 requests>=2.31
 openai>=1.40
 python-dotenv>=1.0
+matplotlib>=3.8  # optional: before/after chart in the report
 # Garak is large (pulls torch/transformers); install it when you run the scan:
 #   pip install -r requirements-garak.txt

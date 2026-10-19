@@ -170,7 +170,7 @@ def build_bot(profile: str | None = None, backend: str | None = None) -> Support
     if profile == "default":
         return SupportBot(**kwargs)
     if profile == "hardened":
-        from harden.hardened_prompt import HARDENED_SYSTEM_PROMPT, hardened_guard
+        from harden.hardened_bot import HARDENED_SYSTEM_PROMPT, hardened_guard
 
         return SupportBot(system_prompt=HARDENED_SYSTEM_PROMPT, guard=hardened_guard(), **kwargs)
     raise ValueError(f"Unknown PROMPT_PROFILE {profile!r}; use 'default' or 'hardened'")

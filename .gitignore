@@ -8,3 +8,5 @@ __pycache__/
 reports/garak/raw/
 reports/results/*-mock.json
 reports/garak/findings-*-mock.json
+reports/report-mock.md
+reports/failures_by_category-mock.png
