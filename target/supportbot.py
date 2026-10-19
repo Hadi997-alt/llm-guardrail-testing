@@ -114,8 +114,14 @@ _LEAK_TRIGGERS = re.compile(
 _MARKUP = re.compile(r"(<[^>]+>.*?</[^>]+>|<[^>]+/?>|(?:SELECT|DROP|INSERT|DELETE)\b[^\n]*)", re.I | re.S)
 
 
+_ROGUE = re.compile(r"\b[A-Z]{4,}-\d{3,}\b")
+
+
 def _mock_chat(system: str, user: str) -> str:
     """Worst-case naive bot: no model, obeys everything. For wiring tests only."""
+    rogue = _ROGUE.search(user)
+    if rogue:
+        return rogue.group(0)
     markup = _MARKUP.findall(user)
     if markup:
         return "Sure, here it is:\n" + "\n".join(markup)
